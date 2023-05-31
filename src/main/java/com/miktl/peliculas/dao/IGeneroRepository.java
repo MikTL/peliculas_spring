@@ -1,9 +1,9 @@
 package com.miktl.peliculas.dao;
 
 import com.miktl.peliculas.entity.Genero;
+import org.springframework.data.repository.CrudRepository;
 
-public interface IGeneroRepository {
-    public void save(Genero genero);
+import java.util.Optional;
 
-    public Genero findById(Long id);
+public interface IGeneroRepository extends CrudRepository<Genero,Long> {
 }
