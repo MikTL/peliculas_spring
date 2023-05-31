@@ -5,7 +5,7 @@ import jakarta.persistence.*;
 import java.io.Serializable;
 
 @Entity(name = "Actor")
-@Table(name = "actors")
+@Table(name = "actores")
 public class Actor implements Serializable {
     private static final long serialVersionUID = 614891469123651720L;
     @Id
