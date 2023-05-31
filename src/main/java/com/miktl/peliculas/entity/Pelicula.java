@@ -1,6 +1,7 @@
 package com.miktl.peliculas.entity;
 
 import jakarta.persistence.*;
+import org.springframework.format.annotation.DateTimeFormat;
 
 import java.io.Serializable;
 import java.util.Date;
@@ -15,10 +16,14 @@ public class Pelicula implements Serializable {
     private String nombre;
     @Column(name = "fecha_estreno")
     @Temporal(TemporalType.DATE)
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date fechaEstreno;
+
+    @OneToOne
     private Genero genero;
+    /*
     @ElementCollection(targetClass = Actor.class)
-    private List<Actor> protagonistas;
+    private List<Actor> protagonistas;*/
 
     public Long getId() {
         return id;
@@ -51,12 +56,12 @@ public class Pelicula implements Serializable {
     public void setGenero(Genero genero) {
         this.genero = genero;
     }
-
+    /*
     public List<Actor> getProtagonistas() {
         return protagonistas;
     }
 
     public void setProtagonistas(List<Actor> protagonistas) {
         this.protagonistas = protagonistas;
-    }
+    }*/
 }
