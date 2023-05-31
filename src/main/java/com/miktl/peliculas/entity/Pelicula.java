@@ -17,6 +17,7 @@ public class Pelicula implements Serializable {
     @Temporal(TemporalType.DATE)
     private Date fechaEstreno;
     private Genero genero;
+    @ElementCollection(targetClass = Actor.class)
     private List<Actor> protagonistas;
 
     public Long getId() {
