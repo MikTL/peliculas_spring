@@ -21,9 +21,9 @@ public class Pelicula implements Serializable {
 
     @OneToOne
     private Genero genero;
-    /*
-    @ElementCollection(targetClass = Actor.class)
-    private List<Actor> protagonistas;*/
+
+    @ManyToMany
+    private List<Actor> protagonistas;
 
     public Long getId() {
         return id;
@@ -56,12 +56,12 @@ public class Pelicula implements Serializable {
     public void setGenero(Genero genero) {
         this.genero = genero;
     }
-    /*
+
     public List<Actor> getProtagonistas() {
         return protagonistas;
     }
 
     public void setProtagonistas(List<Actor> protagonistas) {
         this.protagonistas = protagonistas;
-    }*/
+    }
 }
