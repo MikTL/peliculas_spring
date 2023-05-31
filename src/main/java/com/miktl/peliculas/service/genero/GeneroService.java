@@ -1,4 +1,4 @@
-package com.miktl.peliculas.service;
+package com.miktl.peliculas.service.genero;
 
 import com.miktl.peliculas.dao.IGeneroRepository;
 import com.miktl.peliculas.entity.Genero;

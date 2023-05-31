@@ -1,9 +1,5 @@
-package com.miktl.peliculas.service;
-
+package com.miktl.peliculas.service.genero;
 import com.miktl.peliculas.entity.Genero;
-import org.springframework.stereotype.Service;
-
-
 public interface IGeneroService {
     public void save(Genero genero);
 

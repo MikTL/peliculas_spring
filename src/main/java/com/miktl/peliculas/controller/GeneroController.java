@@ -1,8 +1,7 @@
 package com.miktl.peliculas.controller;
 
-import com.miktl.peliculas.dao.IGeneroRepository;
 import com.miktl.peliculas.entity.Genero;
-import com.miktl.peliculas.service.IGeneroService;
+import com.miktl.peliculas.service.genero.IGeneroService;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
