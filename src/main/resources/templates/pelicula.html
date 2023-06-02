@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://thymeleaf.org">
-<head th:insert="~{layouts/head}"></head>
+<head th:insert="~{layouts/head :: head}"></head>
 <body>
-<header th:insert="~{layouts/header}"></header>
+<header th:insert="~{layouts/header :: header}"></header>
 <div class="container">
     <form th:action="@{/pelicula}" th:object="${pelicula}" method="post" class="col-md-8 offset-md-2">
         <h2 th:text="${titulo}" class="py-4"></h2>
@@ -28,8 +28,34 @@
                 </select>
             </div>
         </div>
+        <div class="row mb-3">
+            <label for="select-actores" class="col-sm-2 col-form-label">Actores</label>
+            <div class="col-sm-10">
+                <select
+                        class="form-select"
+                        id="select-actores"
+                        th:field="*{protagonistas}"
+                        onchange="actorSelected(this)"
+                >
+                    <option th:text="'Seleccionar actor'" th:value="0"></option>
+                    <option
+                            th:each="actor:${actores}"
+                            th:text="${actor.nombre}"
+                            th:value="${actor.id}"
+                            th:data-url="${actor.urlImagen}"
+                    >
+
+                    </option>
+                </select>
+            </div>
+        </div>
+        <input type="hidden" name="ids" id="ids">
+        <div id="protagonistas-container" class="row" >
+
+        </div>
         <button type="submit" class="btn btn-primary">Guardar</button>
     </form>
 </div>
+<script src="/js/app.js"></script>
 </body>
 </html>
