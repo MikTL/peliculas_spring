@@ -1,0 +1,26 @@
+.catalogo-actor-container{
+    display: flex;
+    align-content: stretch;
+    justify-content: flex-start;
+    align-items center;
+}
+.catalogo-actor-imagen{
+    width:32px;
+    height:32px;
+    border-radius:100%;
+    background-size:cover;
+    background-repeat:no-repeat;
+    margin-bottom:4px;
+    border: thin solid red;
+}
+catalogo-actor-texto{
+height:32px;
+}
+
+#vista_previa{
+    width:200px;
+    height: 115px;
+    background-position:center;
+    background-repeat:non-repeat;
+    background-size:cover;
+}

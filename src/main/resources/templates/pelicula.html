@@ -4,7 +4,13 @@
 <body>
 <header th:insert="~{layouts/header :: header}"></header>
 <div class="container">
-    <form th:action="@{/pelicula}" th:object="${pelicula}" method="post" class="col-md-8 offset-md-2">
+    <form
+            th:action="@{/pelicula}"
+            th:object="${pelicula}"
+            method="post"
+            class="col-md-8 offset-md-2"
+            enctype="multipart/form-data"
+    >
         <h2 th:text="${titulo}" class="py-4"></h2>
         <div class="row mb-3">
             <label for="input-nombre" class="col-sm-2 col-form-label">Nombre</label>
@@ -53,6 +59,14 @@
                 <div class="invalid-feedback d-block" th:if="${#fields.hasErrors('protagonistas')}" th:errors="*{protagonistas}"> </div>
             </div>
         </div>
+        <div class="row mb-3">
+            <label for="imagen" class="col-sm-2 col-form-label">imagen</label>
+            <div class="col-sm-10">
+                <input type="file" name="imagen" id="imagen" onchange="previsualizar()">
+                <div id="vista_previa" class="d-none"></div>
+            </div>
+        </div>
+
         <input type="hidden" name="ids" id="ids">
         <div id="protagonistas-container" class="row" >
 
